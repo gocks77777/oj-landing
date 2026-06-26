@@ -104,7 +104,7 @@ export default function Home() {
           <div className="overlay" style={{ background: "rgba(0,0,0,0.7)" }} />
           <div className="section-inner" style={{ position: "relative", zIndex: 2, width: "100%", paddingTop: "100px", paddingBottom: "100px" }}>
             <div style={{ textAlign: "center", marginBottom: "60px" }}>
-              <h2 className="m-tit" style={{ display: "inline-block" }}>업종별 AI 자동화 적용 사례</h2>
+              <h2 className="m-tit" style={{ display: "inline-block", wordBreak: "keep-all" }}>AI 자동화 구축 사례</h2>
             </div>
             {/* 슬라이더 형식 텍스트 카드 그리드 */}
             <div className="perf-slider" style={{ maxWidth: "1200px", margin: "0 auto 33px", display: "flex", gap: "16px", overflowX: "auto", padding: "0 20px" }}>
@@ -112,17 +112,17 @@ export default function Home() {
                 <div
                   key={c.id}
                   style={{
-                    flex: "0 0 calc(20% - 16px)", borderRadius: "30px", overflow: "hidden",
-                    position: "relative", minWidth: "180px",
-                    background: "linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%)",
-                    padding: "28px 22px", color: "#fff",
-                    display: "flex", flexDirection: "column", justifyContent: "space-between",
-                    minHeight: "200px",
+                    flex: "0 0 calc(20% - 16px)", borderRadius: "16px", overflow: "hidden",
+                    minWidth: "190px",
+                    background: "linear-gradient(160deg, #1c2350 0%, #0b0f2c 100%)",
+                    padding: "30px 22px", color: "#fff", textAlign: "center",
+                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+                    minHeight: "210px",
                   }}
                 >
-                  <div style={{ fontSize: "14px", fontWeight: 600, opacity: 0.85, letterSpacing: "-.02em" }}>{c.industry}</div>
-                  <div style={{ fontSize: "30px", fontWeight: 800, letterSpacing: "-.03em", lineHeight: 1.2, margin: "14px 0" }}>{c.metric}</div>
-                  <div style={{ fontSize: "15px", fontWeight: 500, opacity: 0.95, letterSpacing: "-.02em", lineHeight: 1.4 }}>{c.headline}</div>
+                  <div style={{ fontSize: "19px", fontWeight: 800, letterSpacing: "-.03em", lineHeight: 1.35, wordBreak: "keep-all" }}>{c.industry}</div>
+                  <div style={{ margin: "14px 0", padding: "9px 16px", borderRadius: "8px", background: "var(--color-primary)", fontSize: "16px", fontWeight: 800, letterSpacing: "-.02em", lineHeight: 1.35, wordBreak: "keep-all" }}>{c.metric || c.headline}</div>
+                  <div style={{ fontSize: "13px", fontWeight: 600, color: "#b9bdec", wordBreak: "keep-all" }}>{c.category} <span style={{ color: "#ffc24b" }}>구축 완료</span></div>
                 </div>
               ))}
             </div>

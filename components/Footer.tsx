@@ -21,14 +21,6 @@ export default function Footer() {
             <dd>서울특별시</dd>
           </dl>
           <dl>
-            <dt>대표번호</dt>
-            <dd>준비중</dd>
-          </dl>
-          <dl>
-            <dt>사업자등록</dt>
-            <dd>준비중</dd>
-          </dl>
-          <dl>
             <dt>이메일</dt>
             <dd>wjdgocks777@gmail.com</dd>
           </dl>

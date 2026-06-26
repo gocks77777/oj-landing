@@ -36,7 +36,7 @@ export default function PerformancePage() {
   return (
     <div id="sub">
       <Header />
-      <SubPageBanner title="Performance" subtitle="업종별 AI 자동화 적용 사례" />
+      <SubPageBanner title="Performance" subtitle="AI 자동화 구축 사례" />
 
       <div id="container">
         <div id="contArea" className="wide">
@@ -57,9 +57,10 @@ export default function PerformancePage() {
                   color: "#242424",
                   letterSpacing: "-0.03em",
                   marginBottom: "12px",
+                  wordBreak: "keep-all",
                 }}
               >
-                업종별 AI 자동화 적용 사례
+                AI 자동화 구축 사례
               </h2>
               <p
                 style={{
@@ -67,10 +68,10 @@ export default function PerformancePage() {
                   color: "#767676",
                   letterSpacing: "-0.02em",
                   lineHeight: "1.7em",
+                  wordBreak: "keep-all",
                 }}
               >
-                ※ 일부는 O&J가 만드는 자동화의 대표 적용 사례입니다.
-                실제 구축 사례는 <strong style={{ color: "var(--color-primary)" }}>실제 구축</strong> 뱃지로 표시됩니다.
+                다양한 업종의 현장에서 실제로 돌아가고 있는 AI 자동화 구축 사례입니다.
               </p>
             </div>
 
@@ -87,66 +88,43 @@ export default function PerformancePage() {
                       style={{ display: "block", height: "100%" }}
                     >
                       <div
-                        className="thumb"
                         style={{
                           display: "flex",
                           flexDirection: "column",
-                          justifyContent: "flex-end",
-                          minHeight: "200px",
-                          padding: "26px 24px",
-                          background: "linear-gradient(135deg, #6a44e0 0%, #452791 100%)",
-                          borderRadius: "12px",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          textAlign: "center",
+                          minHeight: "240px",
+                          padding: "34px 24px",
+                          background: "linear-gradient(160deg, #1c2350 0%, #0b0f2c 100%)",
+                          borderRadius: "14px",
                           color: "#fff",
+                          transition: "transform .2s, box-shadow .2s",
                         }}
                       >
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "auto" }}>
-                          <span
-                            style={{
-                              display: "inline-flex",
-                              alignItems: "center",
-                              height: "26px",
-                              padding: "0 12px",
-                              borderRadius: "13px",
-                              background: "rgba(255,255,255,0.16)",
-                              fontSize: "12px",
-                              fontWeight: 600,
-                              letterSpacing: "-0.02em",
-                            }}
-                          >
-                            {c.category}
-                          </span>
-                          {c.real && (
-                            <span
-                              style={{
-                                display: "inline-flex",
-                                alignItems: "center",
-                                height: "26px",
-                                padding: "0 12px",
-                                borderRadius: "13px",
-                                background: "#fff",
-                                color: "var(--color-primary)",
-                                fontSize: "12px",
-                                fontWeight: 700,
-                                letterSpacing: "-0.02em",
-                              }}
-                            >
-                              실제 구축
-                            </span>
-                          )}
-                        </div>
-                        <p style={{ fontSize: "14px", opacity: 0.82, letterSpacing: "-0.02em", marginTop: "20px", marginBottom: "6px" }}>
+                        <p style={{ fontSize: "21px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: "1.35em", wordBreak: "keep-all" }}>
                           {c.industry}
                         </p>
-                        <p style={{ fontSize: "18px", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: "1.4em" }}>
-                          {c.headline}
+                        <div
+                          style={{
+                            margin: "18px 0",
+                            padding: "11px 22px",
+                            borderRadius: "8px",
+                            background: "var(--color-primary)",
+                            fontSize: "20px",
+                            fontWeight: 800,
+                            letterSpacing: "-0.02em",
+                            lineHeight: "1.35em",
+                            wordBreak: "keep-all",
+                            maxWidth: "100%",
+                          }}
+                        >
+                          {c.metric || c.headline}
+                        </div>
+                        <p style={{ fontSize: "15px", fontWeight: 600, letterSpacing: "-0.02em", color: "#b9bdec", wordBreak: "keep-all" }}>
+                          {c.category} <span style={{ color: "#ffc24b" }}>구축 완료</span>
                         </p>
                       </div>
-                      <div className="tit" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                        {c.metric && (
-                          <span style={{ color: "var(--color-primary)", fontWeight: 700 }}>{c.metric}</span>
-                        )}
-                      </div>
-                      <div className="date">{c.date}</div>
                     </Link>
                   </li>
                 ))}

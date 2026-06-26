@@ -627,3 +627,6 @@ textarea.input-field {
   .nav-menu > ul > li > a { font-size: 30px; }
   .nav-menu > ul > li { margin-bottom: 45px; }
 }
+
+/* 한글 자연스러운 줄바꿈 (어절 단위) */
+body { word-break: keep-all; overflow-wrap: break-word; }
