@@ -33,9 +33,9 @@ export default function Greetings() {
               </h2>
               <div style={{ fontSize: "18px", lineHeight: 1.8, color: "#454545", letterSpacing: "-.02em" }}>
                 <p>
-                  안녕하세요. O&J 컴퍼니의 오정빈, 정해찬입니다. 저희는
-                  &ldquo;사장님의 일을 AI가 대신합니다&rdquo;라는 한 가지 생각으로
-                  뭉친 두 사람의 AI 외주 스튜디오입니다.
+                  안녕하세요. O&J 컴퍼니입니다. 저희는
+                  &ldquo;사장님의 일을 AI가 대신합니다&rdquo;라는 한 가지 철학으로,
+                  기업의 업무를 자동화하는 AI 솔루션 전문 기업입니다.
                 </p>
                 <br />
                 <p>
@@ -53,7 +53,7 @@ export default function Greetings() {
                 </p>
               </div>
               <div style={{ marginTop: "40px", fontSize: "18px", fontWeight: 600, color: "#242424", letterSpacing: "-.02em" }}>
-                O&J 컴퍼니 공동창업자 <span style={{ color: "var(--color-primary)" }}>오정빈 · 정해찬</span>
+                <span style={{ color: "var(--color-primary)" }}>O&J 컴퍼니 임직원 일동</span>
               </div>
             </div>
 

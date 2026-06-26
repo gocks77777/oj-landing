@@ -4,3 +4,4 @@ node_modules/
 .omc/
 .env*
 .DS_Store
+.vercel

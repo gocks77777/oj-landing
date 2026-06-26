@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://oj-landing.vercel.app"),
   title: "O&J 컴퍼니 — AI로 사장님의 일을 대신합니다",
-  description: "AI 두 번째 뇌, AI 직원팀, 업무·문서 자동화. 기술은 몰라도 됩니다 — 불편한 것만 말씀해주세요. 오정빈 & 정해찬의 2인 AI 스튜디오.",
+  description: "AI 두 번째 뇌, AI 직원팀, 업무·문서 자동화. 기술은 몰라도 됩니다 — 불편한 것만 말씀해주세요. AI 자동화 솔루션 전문 기업 O&J 컴퍼니.",
   openGraph: {
     title: "O&J 컴퍼니 — AI로 사장님의 일을 대신합니다",
     description: "AI 두 번째 뇌, AI 직원팀, 업무·문서 자동화. 기술은 몰라도 됩니다 — 불편한 것만 말씀해주세요.",

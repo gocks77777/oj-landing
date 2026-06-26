@@ -50,7 +50,7 @@ export default function Home() {
               <div style={{ marginBottom: "60px" }}>
                 <h2 className="m-tit">AI로 일하는 회사</h2>
                 <p className="m-txt" style={{ marginTop: "37px" }}>
-                  O&J는 사장님 대신 AI가 일하게 만드는 2인 외주 스튜디오입니다
+                  O&J 컴퍼니는 사장님 대신 AI가 일하게 만드는 자동화 솔루션 전문 기업입니다
                 </p>
               </div>
               <Link href="/company/greetings" className="more-btn">회사 소개</Link>
