@@ -53,19 +53,37 @@ export default async function PerformanceDetailPage({
 
             {d && (
               <>
-                {/* 무엇을 자동화했는지 */}
+                {/* 정보 표 */}
                 <div style={{ maxWidth: "760px", margin: "0 auto 40px" }}>
-                  <h2 style={{ fontSize: "20px", fontWeight: 700, color: "#242424", letterSpacing: "-0.03em", marginBottom: "16px", paddingBottom: "12px", borderBottom: "1px solid #e8e8e8" }}>
-                    무엇을 자동화했나요?
+                  <h2 style={{ fontSize: "20px", fontWeight: 700, color: "#242424", letterSpacing: "-0.03em", marginBottom: "18px", paddingBottom: "12px", borderBottom: "1px solid #e8e8e8" }}>
+                    한눈에 보기
                   </h2>
-                  <p style={{ fontSize: "16px", color: "#454545", lineHeight: "1.8em", letterSpacing: "-0.02em" }}>{d.what}</p>
+                  <table style={{ width: "100%", borderCollapse: "collapse", border: "1px solid #e8e8e8", borderRadius: "8px", overflow: "hidden" }}>
+                    <tbody>
+                      {[
+                        { label: "업종", value: c.industry },
+                        { label: "도입 규모", value: d.scale },
+                        { label: "적용 영역", value: d.area },
+                        { label: c.real ? "실제 효과" : "핵심 효과", value: d.effect },
+                      ].map((row) => (
+                        <tr key={row.label} style={{ borderBottom: "1px solid #eee" }}>
+                          <th style={{ width: "140px", textAlign: "left", verticalAlign: "top", background: "#f7f5ff", color: "var(--color-primary)", fontSize: "15px", fontWeight: 700, letterSpacing: "-0.02em", padding: "16px 18px", borderRight: "1px solid #eee" }}>
+                            {row.label}
+                          </th>
+                          <td style={{ fontSize: "16px", color: "#454545", lineHeight: "1.7em", letterSpacing: "-0.02em", padding: "16px 20px" }}>
+                            {row.value}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
 
-                {/* 적용 포인트 */}
+                {/* AI 자동화 구축 포인트 */}
                 {d.points.length > 0 && (
                   <div style={{ maxWidth: "760px", margin: "0 auto 40px" }}>
                     <h2 style={{ fontSize: "20px", fontWeight: 700, color: "#242424", letterSpacing: "-0.03em", marginBottom: "18px", paddingBottom: "12px", borderBottom: "1px solid #e8e8e8" }}>
-                      적용 포인트
+                      AI 자동화 구축 포인트
                     </h2>
                     <ol style={{ paddingLeft: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "12px" }}>
                       {d.points.map((point, i) => (
@@ -80,12 +98,9 @@ export default async function PerformanceDetailPage({
                   </div>
                 )}
 
-                {/* 기대 효과 */}
+                {/* 마무리 */}
                 <div style={{ maxWidth: "760px", margin: "0 auto 50px", background: "#f4f0ff", border: "1px solid #d4c8ff", borderRadius: "8px", padding: "24px 28px" }}>
-                  <h2 style={{ fontSize: "17px", fontWeight: 700, color: "var(--color-primary)", letterSpacing: "-0.03em", marginBottom: "10px" }}>
-                    {c.real ? "실제 효과" : "기대 효과"}
-                  </h2>
-                  <p style={{ fontSize: "16px", color: "#454545", lineHeight: "1.75em", letterSpacing: "-0.02em" }}>{d.effect}</p>
+                  <p style={{ fontSize: "16px", color: "#454545", lineHeight: "1.8em", letterSpacing: "-0.02em" }}>{d.summary}</p>
                 </div>
               </>
             )}

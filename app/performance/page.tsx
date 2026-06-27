@@ -88,42 +88,105 @@ export default function PerformancePage() {
                       style={{ display: "block", height: "100%" }}
                     >
                       <div
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "translateY(-6px)";
+                          e.currentTarget.style.boxShadow = "0 28px 56px -20px rgba(106,68,224,0.55)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "translateY(0)";
+                          e.currentTarget.style.boxShadow = "0 18px 40px -18px rgba(8,11,32,0.85)";
+                        }}
                         style={{
+                          position: "relative",
+                          overflow: "hidden",
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "center",
                           justifyContent: "center",
                           textAlign: "center",
-                          minHeight: "240px",
-                          padding: "34px 24px",
-                          background: "linear-gradient(160deg, #1c2350 0%, #0b0f2c 100%)",
-                          borderRadius: "14px",
+                          minHeight: "256px",
+                          padding: "30px 26px",
+                          background: "linear-gradient(160deg, #1a1f3d 0%, #0c1024 100%)",
+                          borderRadius: "18px",
+                          border: "1px solid rgba(255,255,255,0.06)",
                           color: "#fff",
-                          transition: "transform .2s, box-shadow .2s",
+                          boxShadow: "0 18px 40px -18px rgba(8,11,32,0.85)",
+                          transition: "transform .25s ease, box-shadow .25s ease",
                         }}
                       >
-                        <p style={{ fontSize: "21px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: "1.35em", wordBreak: "keep-all" }}>
-                          {c.industry}
-                        </p>
-                        <div
+                        {/* 빛번짐 glow */}
+                        <span
+                          aria-hidden
                           style={{
-                            margin: "18px 0",
-                            padding: "11px 22px",
-                            borderRadius: "8px",
-                            background: "var(--color-primary)",
-                            fontSize: "20px",
-                            fontWeight: 800,
-                            letterSpacing: "-0.02em",
-                            lineHeight: "1.35em",
-                            wordBreak: "keep-all",
-                            maxWidth: "100%",
+                            position: "absolute",
+                            top: "-30%",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                            width: "260px",
+                            height: "260px",
+                            background: "radial-gradient(circle, rgba(106,68,224,0.32) 0%, rgba(106,68,224,0) 68%)",
+                            pointerEvents: "none",
                           }}
-                        >
-                          {c.metric || c.headline}
+                        />
+                        {/* vignette */}
+                        <span
+                          aria-hidden
+                          style={{
+                            position: "absolute",
+                            inset: 0,
+                            background: "radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 55%), radial-gradient(120% 120% at 50% 120%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 60%)",
+                            pointerEvents: "none",
+                          }}
+                        />
+
+                        <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
+                          {/* 상단 pill 태그 */}
+                          <span
+                            style={{
+                              display: "inline-block",
+                              padding: "5px 14px",
+                              borderRadius: "999px",
+                              background: "#2a2f52",
+                              border: "1px solid rgba(255,255,255,0.08)",
+                              fontSize: "12px",
+                              fontWeight: 600,
+                              letterSpacing: "-0.01em",
+                              color: "#c9cdf0",
+                              wordBreak: "keep-all",
+                            }}
+                          >
+                            {c.headline}
+                          </span>
+
+                          {/* 업종 타이틀 */}
+                          <p style={{ marginTop: "18px", fontSize: "27px", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: "1.3em", wordBreak: "keep-all" }}>
+                            {c.industry}
+                          </p>
+
+                          {/* 강조 metric 박스 */}
+                          <div
+                            style={{
+                              margin: "20px auto 18px",
+                              padding: "13px 22px",
+                              borderRadius: "12px",
+                              background: "linear-gradient(135deg, #7a55ef 0%, #5a36c9 100%)",
+                              boxShadow: "0 10px 26px -10px rgba(106,68,224,0.7)",
+                              fontSize: "20px",
+                              fontWeight: 800,
+                              letterSpacing: "-0.02em",
+                              lineHeight: "1.35em",
+                              wordBreak: "keep-all",
+                              maxWidth: "100%",
+                            }}
+                          >
+                            {c.metric || c.headline}
+                          </div>
+
+                          {/* 하단 라벨 */}
+                          <p style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em", color: "#9aa0d4", wordBreak: "keep-all" }}>
+                            {c.category} <span style={{ color: "#ffc24b" }}>구축 완료</span>
+                          </p>
                         </div>
-                        <p style={{ fontSize: "15px", fontWeight: 600, letterSpacing: "-0.02em", color: "#b9bdec", wordBreak: "keep-all" }}>
-                          {c.category} <span style={{ color: "#ffc24b" }}>구축 완료</span>
-                        </p>
                       </div>
                     </Link>
                   </li>

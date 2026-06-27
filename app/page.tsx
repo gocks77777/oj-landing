@@ -111,18 +111,42 @@ export default function Home() {
               {perfCases.slice(0, 5).map((c) => (
                 <div
                   key={c.id}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-6px)";
+                    e.currentTarget.style.boxShadow = "0 26px 50px -20px rgba(106,68,224,0.55)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "0 16px 36px -18px rgba(8,11,32,0.85)";
+                  }}
                   style={{
-                    flex: "0 0 calc(20% - 16px)", borderRadius: "16px", overflow: "hidden",
+                    position: "relative",
+                    flex: "0 0 calc(20% - 16px)", borderRadius: "18px", overflow: "hidden",
                     minWidth: "190px",
-                    background: "linear-gradient(160deg, #1c2350 0%, #0b0f2c 100%)",
-                    padding: "30px 22px", color: "#fff", textAlign: "center",
+                    background: "linear-gradient(160deg, #1a1f3d 0%, #0c1024 100%)",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    boxShadow: "0 16px 36px -18px rgba(8,11,32,0.85)",
+                    padding: "28px 20px", color: "#fff", textAlign: "center",
                     display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                    minHeight: "210px",
+                    minHeight: "224px",
+                    transition: "transform .25s ease, box-shadow .25s ease",
                   }}
                 >
-                  <div style={{ fontSize: "19px", fontWeight: 800, letterSpacing: "-.03em", lineHeight: 1.35, wordBreak: "keep-all" }}>{c.industry}</div>
-                  <div style={{ margin: "14px 0", padding: "9px 16px", borderRadius: "8px", background: "var(--color-primary)", fontSize: "16px", fontWeight: 800, letterSpacing: "-.02em", lineHeight: 1.35, wordBreak: "keep-all" }}>{c.metric || c.headline}</div>
-                  <div style={{ fontSize: "13px", fontWeight: 600, color: "#b9bdec", wordBreak: "keep-all" }}>{c.category} <span style={{ color: "#ffc24b" }}>구축 완료</span></div>
+                  {/* 빛번짐 glow */}
+                  <span aria-hidden style={{ position: "absolute", top: "-28%", left: "50%", transform: "translateX(-50%)", width: "200px", height: "200px", background: "radial-gradient(circle, rgba(106,68,224,0.32) 0%, rgba(106,68,224,0) 68%)", pointerEvents: "none" }} />
+                  {/* vignette */}
+                  <span aria-hidden style={{ position: "absolute", inset: 0, background: "radial-gradient(120% 120% at 50% 120%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 60%)", pointerEvents: "none" }} />
+
+                  <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
+                    {/* 상단 pill 태그 */}
+                    <span style={{ display: "inline-block", padding: "4px 12px", borderRadius: "999px", background: "#2a2f52", border: "1px solid rgba(255,255,255,0.08)", fontSize: "11px", fontWeight: 600, color: "#c9cdf0", wordBreak: "keep-all" }}>{c.headline}</span>
+                    {/* 업종 타이틀 */}
+                    <div style={{ marginTop: "13px", fontSize: "20px", fontWeight: 800, letterSpacing: "-.03em", lineHeight: 1.3, wordBreak: "keep-all" }}>{c.industry}</div>
+                    {/* 강조 metric 박스 */}
+                    <div style={{ margin: "13px auto 12px", padding: "10px 16px", borderRadius: "10px", background: "linear-gradient(135deg, #7a55ef 0%, #5a36c9 100%)", boxShadow: "0 8px 20px -8px rgba(106,68,224,0.7)", fontSize: "16px", fontWeight: 800, letterSpacing: "-.02em", lineHeight: 1.35, wordBreak: "keep-all" }}>{c.metric || c.headline}</div>
+                    {/* 하단 라벨 */}
+                    <div style={{ fontSize: "12px", fontWeight: 600, color: "#9aa0d4", wordBreak: "keep-all" }}>{c.category} <span style={{ color: "#ffc24b" }}>구축 완료</span></div>
+                  </div>
                 </div>
               ))}
             </div>
